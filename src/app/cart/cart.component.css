@@ -1,0 +1,51 @@
+#icon{
+   
+    width: 30px;
+    height:30px;
+    border-radius: 50%;
+}
+.myCart{
+    width: 400px;
+    min-height: 800px;
+    background-color: aliceblue;
+    padding: 5px;
+    overflow: scroll;
+    position: absolute;
+    top:70px;
+    right: 0px;
+}
+.myCart img{
+    width: 20px;
+    height: 20px;
+    float: right;
+}
+.cart{
+    margin: 10px;
+}
+    
+.items img{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    
+    
+}
+.items{
+    display: flex;
+    
+ }    
+
+.item-details{
+    width: 300px;
+    position: relative;
+    margin:5px ;
+}
+.item-details img{
+    width: 30px;
+    height: 30px;
+    
+    
+    
+   
+    
+}

@@ -1,0 +1,32 @@
+<img id="icon" (click)="openCart()" src="https://tse4.mm.bing.net/th?id=OIP.iDVurdWMV4YcAhqCEaT1bQHaHa&pid=Api&P=0">
+<span>{{products.length}}</span>
+<div class="myCart" *ngIf="cartShow">
+    <img (click)="closeCart()" src="https://tse4.mm.bing.net/th?id=OIP.S9S7-NiGomI_rL1fs7MOSQHaHt&pid=Api&P=0">
+
+    <h1>cart Details</h1>
+    <h3>products:{{products.length}}|Total Price $:{{totalPrice}}</h3>
+    <hr>
+    <div class="cart" *ngFor="let product of products;let i=index">
+        <div class="items"><img src="{{product.image}}" alt="">
+
+            <div class="item-details">
+
+                <div>
+                    <p>{{product.title}} </p>
+                    <p style="display: inline;">Cost:<b>${{product.price}}</b></p>
+                    <img style="display: block;" (click)="delProduct(i)"
+                        src="https://tse2.mm.bing.net/th?id=OIP.7hwq4q-1gLKQxrBxl0P_nAHaJG&pid=Api&P=0">
+
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="cart" *ngIf="addedProducts.length>0; ">
+  <div class="cart-main" *ngFor="let pr of addedProducts;let i=index">
+    <img src="{{pr.image}}">
+
+    <div class="cart-details">
+      <div>
+        <p>{{pr.title}}</p>
+      </div>
+      <div>
+        <p>Cost:<b>${{pr.price}}</b></p>
+      </div>
+
+
+
+
+
+      <button (click)="removeProducts(i)">Remove</button>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="child main">
+
+
+  <div class="sub-div" *ngFor="let product of products; let i = index;">
+
+    <div class="Product-image"><img src="{{product.image}}"></div>
+    <div class="product-details">
+      <p class="ellipsis" title="{{product.title}}"><b>{{product.title}}</b></p>
+      <p class="v-ellipsis" title="{{product.description }}"> {{product.description }}</p>
+      <p>Cost:<b>${{product.price}}</b></p>
+
+      <button (click)="addToCart(product)">Add to cart</button>
+      
+        <button type="button"  data-toggle="modal" data-target="#productView" (click)="View(product)">
+          view Product
+        </button>
+     
+    </div>
+
+
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="productView" tabindex="-1" role="dialog" aria-labelledby="productView" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="" id="productView">{{productView?.title}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        
+      </div>
+      <div class="modal-body">
+        <span><img src={{productView?.image}}></span>
+        
+        <p><b>Cost:</b>${{productView?.price}}</p>
+        <p><b>Category :</b>{{productView?.category}}</p>
+        <p><b>Description :</b>{{productView?.description}}</p>
+        <p><b>Rating:</b>{{productView?.rating?.rate}} rated <b>{{productView?.rating?.count}}</b> members</p>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>

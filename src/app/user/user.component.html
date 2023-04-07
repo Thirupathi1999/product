@@ -1,0 +1,29 @@
+<h1>User Details</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>AGE</th>
+        <th>GENDER</th>
+        <th>EMAILID</th>
+        <th>BLOODGROUP</th>
+        <th>photo</th>
+        <th>ADDRESS</th>
+        
+        <th>ACTIONS</th>
+    </tr>
+    <tr *ngFor="let user of this.listofUsers?.users;let i=index">
+        <td>{{user.id}}</td>
+        <td>{{user.firstName | uppercase}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.gender }}</td>
+        <td>{{user.email|uppercase}}</td>
+        <td>{{user.bloodGroup}}</td>
+        <td>{{user.address.address}},{{user.address.city}}</td>
+        <td> <img class="photo" src="{{user.image}}" alt=""></td>
+        
+        <td> <img (click)= "deleteUser(i)" class="photo" src="https://www.uidownload.com/files/240/295/614/delete-icon.jpg"alt=""></td>
+
+    </tr>
+</table> 

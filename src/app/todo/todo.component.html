@@ -1,0 +1,22 @@
+<div class="inputField">
+<input type="text"  name="todoskills"  [(ngModel)]= "todoskills" placeholder="Enter Your Skills"  >
+<select name="status" [(ngModel)]="todostatus" id="inputField">
+    <option value="Completed"> Completed</option>
+    <option Value="Inprogess">Inprogress</option>
+    <option value="Don't Know">Don't Know</option>
+</select>
+
+<button class="addSkills btn btn-primary" (click)="addSkills(todoskills,todostatus)"[disabled] ="!todoskills" >ADD</button>
+
+</div>
+
+
+<table class="table table-striped">
+    <tr><th>Skills</th><th>Status</th><th>Actions</th></tr>
+    <tr *ngFor="let todo of todoList; let i=index;">
+        <td>{{todo.todoSkils}}</td>
+        <td>{{todo.Status}}</td>
+        <td><button class="btn btn-danger" (click)="deleteSkills(i)" >Delete</button></td>
+    </tr>
+
+</table>
